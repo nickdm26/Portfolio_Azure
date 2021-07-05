@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import C_Sharp_logo from './Images/C_Sharp_logo.svg';
+import PowerShell_logo from './Images/PowerShell_logo.svg';
 import HTML5_logo from './Images/HTML5_logo.svg';
 import CSS3_logo from './Images/CSS3_logo.svg';
 import JavaScript_logo from './Images/Unofficial_JavaScript_logo.svg';
@@ -49,6 +50,12 @@ class Home extends Component {
                                 <div className="icon">
                                     <img className="icon" src={C_Sharp_logo} alt="C Sharp Logo" />
                                     <span>C Sharp</span>
+                                </div>
+                            </a>
+                            <a href="https://en.wikipedia.org/wiki/PowerShell">
+                                <div className="icon">
+                                    <img className="icon" src={PowerShell_logo} alt="PowerShell" />
+                                    <span>PowerShell</span>
                                 </div>
                             </a>
                             <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">
