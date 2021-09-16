@@ -10,4 +10,6 @@ module.exports = async function (context, req) {
         // status: 200, /* Defaults to 200 */
         body: responseMessage
     };
+    console.log("test");
+    context.log(req);    
 }
