@@ -10,7 +10,7 @@ import Python_logo from './Images/Python-logo.svg';
 import MySql_logo from './Images/mysql_logo.svg';
 import resume from './pdfs/Nicholas_Muldrew_CV_2020.pdf';
 
-// import Contactform from "./contactForm"
+import Contactform from "./contactForm"
 import Temperature from "./temperature_api"
 
 class Home extends Component {
@@ -109,7 +109,7 @@ class Home extends Component {
                         <br />
                         <a href={resume} download="Nick Muldrew Resume">Download Resume</a>
                     </div>
-                    {/* <Contactform /> */}
+                    <Contactform />
 
                 </div>
             </>

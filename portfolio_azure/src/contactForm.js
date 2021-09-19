@@ -30,7 +30,7 @@ class contactForm extends Component {
 
         const data = { email, message, time: time.getTime() };
 
-        Axios.post('https://us-central1-nick-portfolio-5c33a.cloudfunctions.net/submit', data).catch(error => {
+        Axios.post('http://localhost:7071/api/EmailNick', data).catch(error => {
             console.log(error);
         });
 
