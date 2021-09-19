@@ -6,6 +6,9 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.6",
+    "dotenv": "^10.0.0"
+  },
   "devDependencies": {}
 }

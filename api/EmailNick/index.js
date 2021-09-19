@@ -1,15 +1,34 @@
-module.exports = async function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+const sgMail = require("@sendgrid/mail");
+const result = require("dotenv").config({ path: "./sendgrid.env" });
 
-    const name = (req.query.name || (req.body && req.body.name));
-    const responseMessage = name
-        ? "Hello, " + name + ". This HTTP triggered function executed successfully."
-        : "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.";
-
-    context.res = {
-        // status: 200, /* Defaults to 200 */
-        body: responseMessage
-    };
-    console.log("test");
-    context.log(req);    
+if (result.error) {
+  throw result.error;
 }
+// console.log(result.parsed);
+
+module.exports = async function (context, req) {
+  const Fromemailaddress = req.body.email;
+  const message = req.body.message;
+
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  const msg = {
+    to: "nickdm26@gmail.com", // Change to your recipient
+    from: "nickdm26@gmail.com", // Change to your verified sender
+    subject: "Portfolio Message from: " + Fromemailaddress,
+    text: message,
+  };
+
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log("Email sent");
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+  context.res = {
+    // status: 200, /* Defaults to 200 */
+    // body: responseMessage,
+  };
+};
