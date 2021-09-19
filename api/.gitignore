@@ -95,3 +95,5 @@ local.settings.jsonsendgrid.env
 
 # env file
 api/sendgrid.env
+
+api/local.settings.json
